@@ -14,11 +14,7 @@ module.exports = {
     main: './index.tsx',
     vendor: [
       'react',
-      'react-dom',
-      'react-redux',
-      'redux',
-      'redux-logger',
-      'redux-thunk'
+      'react-dom'
     ]
   },
   output: {
