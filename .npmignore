@@ -1,0 +1,11 @@
+node_modules/
+*.log
+*.tgz
+
+src/
+tsconfig.json
+tslint.json
+types/
+webpack/
+webpack.config.js
+dist/

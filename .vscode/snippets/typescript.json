@@ -1,0 +1,18 @@
+{
+    "TS Function": {
+        "prefix": "_func",
+        "body": [
+            "export function ${1:init}(${2}) {",
+            "\t${3}",
+            "}${4}"
+        ]
+    },
+    "TS Function With no Export": {
+        "prefix": "_func-noexport",
+        "body": [
+            "function ${1:init}(${2}) {",
+            "\t${3}",
+            "}${4}"
+        ]
+    }
+}

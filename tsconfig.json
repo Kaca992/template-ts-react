@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "target": "es5",
+    "jsx": "react",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "declaration": false,
+    "noImplicitAny": false,
+    "noImplicitReturns": false,
+    "removeComments": true,
+    "outDir": "dist",
+    "lib": [
+      "es6",
+      "es7",
+      "dom"
+    ],
+    // enables custom paths on import. IMPORTANT!: need to be defined in webpack alias also
+    "baseUrl": ".",
+    "paths": {
+      "common/*": ["src/common/*"],
+      "components/*": ["src/components/*"],
+      "containers/*": ["src/containers/*"]
+    }
+  },
+  "exclude": [
+    "dist",
+    "build",
+    "node_modules"
+  ]
+}

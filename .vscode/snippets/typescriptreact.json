@@ -1,0 +1,35 @@
+{
+    "TS React Comp":{
+        "prefix": "_cmp",
+        "body": [
+            "import * as React from 'react';\n",
+
+            "import * as classNames from 'classnames';",
+            "import { autobind } from 'core-decorators';\n",
+
+            "import './${1:${TM_FILENAME_BASE/(.*)$/${1}/}}.scss';\n",
+
+            "export interface I${2:${TM_FILENAME_BASE/(.{1})(.*)$/${1:/upcase}$2/}}Props {\n",
+            "}\n",
+
+            "export interface I${2}State {\n",
+            "}\n",
+
+            "export default class ${2} extends React.Component<I${2}Props, I${2}State> {",
+                "\tconstructor(props: I${2}Props) {",
+                    "\t\tsuper(props);\n",      
+                "\t}\n",
+
+                "\tpublic render() {",
+                    "\t\treturn (",
+                        "\t\t\t<div>",
+                        "\t\t\t\tHello",                  
+                        "\t\t\t</div>",
+                    "\t\t);",
+                "\t}",
+            "}",
+            ""
+        ],
+        "description": "React Component snippet"
+    }
+}

@@ -1,0 +1,1 @@
+exports.isProduction = process.argv.indexOf('-p') >= 0;
