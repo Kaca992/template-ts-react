@@ -5,8 +5,8 @@ export interface ICustomFetchOptions {
     hasResult?: boolean;
 }
 
-export function fetcher(url: string, customOptions: ICustomFetchOptions, dispatch: any, init?: RequestInit): Promise<any> {
-    let options: any = {
+export function fetcher(url: string, customOptions: ICustomFetchOptions, init?: RequestInit): Promise<any> {
+    const options: any = {
         mode: 'cors',
         credentials: 'omit',
         headers: {
@@ -15,7 +15,7 @@ export function fetcher(url: string, customOptions: ICustomFetchOptions, dispatc
         ...init
     };
 
-    let fullUrl = appendServiceApiEndpoint(url);
+    const fullUrl = appendServiceApiEndpoint(url);
 
     return fetch(fullUrl, options)
         .then(response => {
@@ -28,8 +28,12 @@ export function fetcher(url: string, customOptions: ICustomFetchOptions, dispatc
 
                 return Promise.resolve();
             } else {
-                const error = new Error(response.statusText);
-                throw error;
+                let payload = { status: response.status, body: null };
+                return response.json().then(errorResponse => {
+                    payload = { ...payload, body: errorResponse };
+                }).then(resp => {
+                    throw payload;
+                }).catch(err => { throw payload; });
             }
         });
 }
