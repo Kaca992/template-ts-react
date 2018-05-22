@@ -31,5 +31,50 @@
             ""
         ],
         "description": "React Component snippet"
+    },
+    "TS React Stateless Functional Component": {
+        "prefix": "_cmp-func",
+        "body": [
+            "import * as React from 'react';",
+            "",
+            "import './${1:${TM_FILENAME_BASE/(.*)$/${1}/}}.scss';",
+            "",
+            "export interface I${2:${TM_FILENAME_BASE/(.{1})(.*)$/${1:/upcase}$2/}}Props {",
+            "",
+            "}",
+            "",
+            "export const ${2}: React.SFC<I${2}Props> = (props) => {",
+            "\treturn <div>Hello</div>;",
+            "};",
+            ""
+        ],
+        "description": "React Stateless Functional Component snippet"
+    },
+    "TS React Stateless Component": {
+        "prefix": "_cmp-stateless",
+        "body": [
+            "import * as React from 'react';",
+            "",
+            "import * as classNames from 'classnames';",
+            "import { autobind } from 'core-decorators';",
+            "",
+            "import './${1:${TM_FILENAME_BASE/(.*)$/${1}/}}.scss';",
+            "",
+            "export interface I${2:${TM_FILENAME_BASE/(.{1})(.*)$/${1:/upcase}$2/}}Props {",
+            "",
+            "}",
+            "",
+            "export default class ${2} extends React.PureComponent<I${2}Props> {",
+                "\tpublic render() {",
+                    "\t\treturn (",
+                        "\t\t\t<div>",
+                        "\t\t\t\tHello",                  
+                        "\t\t\t</div>",
+                    "\t\t);",
+                "\t}",
+            "}",
+            ""
+        ],
+        "description": "React Stateless Functional Component snippet"
     }
 }
