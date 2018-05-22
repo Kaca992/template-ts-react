@@ -60,7 +60,9 @@ module.exports = {
     new webpackPlugins.HtmlWebpackPlugin({
       template: 'index.html'
     }),
-    new webpackPlugins.WebpackNotifierPlugin()
+    new webpackPlugins.WebpackNotifierPlugin(),
+    new webpackPlugins.UglifyJSPlugin(),
+    new webpackPlugins.CompressionPlugin()
   ],
   devServer: {
     contentBase: sourcePath,

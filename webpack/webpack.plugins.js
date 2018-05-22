@@ -6,3 +6,5 @@ exports.ExtractTextPlugin = require('extract-text-webpack-plugin');
 exports.HtmlWebpackPlugin = require('html-webpack-plugin');
 //copy files
 exports.CopyWebpackPlugin = require('copy-webpack-plugin');
+exports.UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+exports.CompressionPlugin = require("compression-webpack-plugin");
