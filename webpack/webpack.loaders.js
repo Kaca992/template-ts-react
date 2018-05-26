@@ -19,16 +19,7 @@ const sassProd = {
     use: [plugins.MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
 };
 
-
-//static assets
-// exports.htmlLoader = {
-//     test: /\.html$/, use: 'html-loader'
-// };
-
-// exports.urlLoader = {
-//     test: /\.png$/, use: 'url-loader?limit=10000'
-// };
-
+// assets loaders
 const fileLoader = {
     test: /\.(png|jpg|jpeg|gif|svg)$/, use: "file-loader?name=./assets/images/[name].[ext]"
 };
@@ -37,6 +28,7 @@ const fontLoader = {
     test: /\.(woff|woff2|eot|ttf|otf)$/, use: ['file-loader?name=./assets/fonts/[name].[ext]']
 }
 
+// get loaders function
 exports.getLoaders = (isProduction) => {
     let loaders = [awesomeTypeScript, fileLoader, fontLoader];
 

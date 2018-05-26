@@ -19,7 +19,7 @@ module.exports = env => {
     // sets some default plugins like uglify
     mode: isProduction ? 'production' : 'development',
     resolve: {
-      extensions: ['.js', '.ts', '.tsx'],
+      extensions: ['.js', '.json', '.ts', '.tsx'],
       alias: {
         // CUSTOM PACKAGES:
         // enables custom paths on import. IMPORTANT!: need to be defined in typescript path also + baseUrl
