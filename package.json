@@ -2,12 +2,22 @@
   "name": "template-ts-react",
   "version": "0.1.0",
   "private": true,
-  "description": "Template project",
+  "description": "Template project that includes React, TS, Sass and Webpack v4",
   "main": "index.js",
+  "author": {
+    "name": "Dino Kacevenda",
+    "email": "kacavendadino@gmail.com"
+  },
+  "keywords": [
+    "react", "typescript", "webpack", "sass"
+  ],
+  "repository": {
+    "url": "https://github.com/Kaca992/template-ts-react"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --debug --output-pathinfo --history-api-fallback --hot --inline --progress --colors --port 3000 --open",
-    "mobile-dev": "webpack-dev-server --debug --devtool cheap-module-source-map --output-pathinfo --history-api-fallback --hot --inline --progress --colors --port 3000 --open --host 192.168.1.19",
+    "mobile-dev": "webpack-dev-server --debug --output-pathinfo --history-api-fallback --hot --inline --progress --colors --port 3000 --open --host {enter ip adress here}",
     "build": "set NODE_ENV=production&& npm run clean-dist & webpack --progress --colors",
     "clean": "npm run clean-modules && npm run clean-dist",
     "clean-modules": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command Remove-Item .\\node_modules -Force -Recurse",
