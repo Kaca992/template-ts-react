@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --debug --devtool cheap-module-source-map --output-pathinfo --history-api-fallback --hot --inline --progress --colors --port 3000 --open",
     "mobile-dev": "webpack-dev-server --debug --devtool cheap-module-source-map --output-pathinfo --history-api-fallback --hot --inline --progress --colors --port 3000 --open --host 192.168.1.19",
-    "build": "set NODE_ENV=production&& npm run clean-dist & webpack --progress --mode=production --colors",
+    "build": "set NODE_ENV=production&& npm run clean-dist & webpack --progress --colors",
     "clean": "npm run clean-modules && npm run clean-dist",
     "clean-modules": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command Remove-Item .\\node_modules -Force -Recurse",
     "clean-dist": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command Remove-Item .\\dist -Force -Recurse"
@@ -26,6 +26,7 @@
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.7.2",
+    "optimize-css-assets-webpack-plugin": "^4.0.1",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
     "tslint": "^5.8.0",

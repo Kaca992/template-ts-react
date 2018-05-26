@@ -8,12 +8,16 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = env => {
   return {
-    entry: './src/index.tsx',
+    entry: {
+      main: './src/index.tsx'
+    },
     devtool: isProduction ? 'source-map' : 'inline-source-map',
     output: {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist')
     },
+    // sets some default plugins like uglify
+    mode: isProduction ? 'production' : 'development',
     resolve: {
       extensions: ['.js', '.ts', '.tsx'],
       alias: {
@@ -22,11 +26,14 @@ module.exports = env => {
         'common': path.resolve(__dirname, 'src/common'),
         'components': path.resolve(__dirname, 'src/components'),
         'containers': path.resolve(__dirname, 'src/containers')
-       }
+      }
     },
     module: {
       rules: webpackLoaders.getLoaders(isProduction)
     },
-    plugins: webpackPlugins.getPlugins(isProduction)
+    plugins: webpackPlugins.getPlugins(isProduction),
+    optimization: {
+      minimizer: [ isProduction ? new webpackPlugins.OptimizeCSSAssetsPlugin({}) : null ]
+    },
   }
 };

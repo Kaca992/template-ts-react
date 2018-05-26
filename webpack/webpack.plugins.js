@@ -19,6 +19,10 @@ exports.MiniCssExtractPlugin = MiniCssExtractPlugin;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 exports.HtmlWebpackPlugin = HtmlWebpackPlugin;
 
+// optimization of css
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+exports.OptimizeCSSAssetsPlugin = OptimizeCSSAssetsPlugin;
+
 exports.getPlugins = (isProduction) => {
     return [
         new MiniCssExtractPlugin({
