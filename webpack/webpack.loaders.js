@@ -1,37 +1,53 @@
 var plugins = require('./webpack.plugins');
 
 //typeScript
-exports.awesomeTypeScript = {
+const awesomeTypeScript = {
     test: /\.tsx?$/,
     use: 'awesome-typescript-loader',
     exclude: /node_modules/
 };
 
 // sass loader
-exports.sassDev = {
-    test: /\.scss$/, 
+const sassDev = {
+    test: /\.scss$/,
     use: ['style-loader', 'css-loader', 'sass-loader']
 };
 
 // produciton sass loader separates all css files into a separate file, not inlined with js
-exports.sassProd = {
-    test: /\.scss$/, 
+const sassProd = {
+    test: /\.scss$/,
     use: [plugins.MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
 };
 
 
 //static assets
-exports.htmlLoader = {
-    test: /\.html$/, use: 'html-loader'
-};
+// exports.htmlLoader = {
+//     test: /\.html$/, use: 'html-loader'
+// };
 
 // exports.urlLoader = {
 //     test: /\.png$/, use: 'url-loader?limit=10000'
 // };
 
-exports.fileLoader = {
-   test: /\.(png|jpg|jpeg|gif|svg)$/, loader: "file-loader?name=./assets/images/[name].[ext]"
+const fileLoader = {
+    test: /\.(png|jpg|jpeg|gif|svg)$/, use: "file-loader?name=./assets/images/[name].[ext]"
 };
+
+const fontLoader = {
+    test: /\.(woff|woff2|eot|ttf|otf)$/, use: ['file-loader?name=./assets/fonts/[name].[ext]']
+}
+
+exports.getLoaders = (isProduction) => {
+    let loaders = [awesomeTypeScript, fileLoader, fontLoader];
+
+    if (isProduction) {
+        loaders.push(sassProd);
+    } else {
+        loaders.push(sassDev);
+    }
+
+    return loaders;
+}
 
 //styles
 

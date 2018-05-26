@@ -4,6 +4,7 @@ import * as classNames from 'classnames';
 import { autobind } from 'core-decorators';
 
 import './main.scss';
+import * as helloWorld from '../../assets/images/hello-world.png';
 
 export interface IMainProps {
 
@@ -22,6 +23,7 @@ export default class Main extends React.Component<IMainProps, IMainState> {
     public render() {
         return (
             <div className="main-container">
+                <img src={helloWorld} />
                 Hello
             </div>
         );
