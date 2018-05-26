@@ -9,9 +9,9 @@
     "experimentalDecorators": true,
     "declaration": false,
     "noImplicitAny": false,
-    "noImplicitReturns": false,
+    "noImplicitReturns": true,
     "removeComments": true,
-    "outDir": "dist",
+    "outDir": "./dist/",
     "lib": [
       "es6",
       "es7",

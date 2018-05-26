@@ -1,78 +1,50 @@
-const Webpack = require('webpack');
-const Path = require('path');
+const path = require('path');
+const webpack = require('webpack');
 
 const webpackLoaders = require('./webpack/webpack.loaders');
 const webpackPlugins = require('./webpack/webpack.plugins');
-const variables = require('./webpack/webpack.variables');
 
-const outPath = Path.join(__dirname, './dist');
-const sourcePath = Path.join(__dirname, './src');
+const isProduction = process.env.NODE_ENV === 'production';
 
-module.exports = {
-  context: sourcePath,
-  entry: {
-    main: './index.tsx',
-    vendor: [
-      'react',
-      'react-dom'
-    ]
-  },
-  output: {
-    path: outPath,
-    publicPath: '/',
-    filename: 'bundle.js',
-  },
-  target: 'web',
-  resolve: {
-    extensions: ['.js', '.ts', '.tsx'],
-    alias: {
-      // CUSTOM PACKAGES:
-      // enables custom paths on import. IMPORTANT!: need to be defined in typescript path also + baseUrl
-      'common': Path.resolve(__dirname, 'src/common'),
-      'components': Path.resolve(__dirname, 'src/components'),
-      'containers': Path.resolve(__dirname, 'src/containers')
-     }
-  },
-  module: {
-    loaders: [
-      webpackLoaders.awesomeTypeScript,
-      // static assets
-     webpackLoaders.htmlLoader,
-     webpackLoaders.fileLoader,
-     //styles
-     variables.isProduction ? webpackLoaders.sassOneFile : webpackLoaders.sass
-    ],
-  },
-  plugins: [
-    new Webpack.DefinePlugin({
-      'process.env.NODE_ENV': variables.isProduction === true ? JSON.stringify('production') : JSON.stringify('development')
-    }),
-    new Webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      filename: 'vendor.bundle.js',
-      minChunks: Infinity
-    }),
-    new Webpack.optimize.AggressiveMergingPlugin(),
-    new webpackPlugins.ExtractTextPlugin({
-      filename: 'styles.css',
-      disable: !variables.isProduction
-    }),
-    new webpackPlugins.HtmlWebpackPlugin({
-      template: 'index.html'
-    }),
-    new webpackPlugins.WebpackNotifierPlugin()
-  ],
-  devServer: {
-    contentBase: sourcePath,
-    hot: true,
-    stats: {
-      warnings: false
+module.exports = env => {
+  return {
+    entry: {
+      main: './src/index.tsx'
     },
-  },
-  node: {
-    // workaround for webpack-dev-server issue
-    // https://github.com/webpack/webpack-dev-server/issues/60#issuecomment-103411179
-    fs: 'empty',
-    net: 'empty'
+    devtool: isProduction ? 'source-map' : 'inline-source-map',
+    output: {
+      filename: '[name].bundle.js',
+      path: path.resolve(__dirname, 'dist'),
+      publicPath: isProduction ? './' : '/'
+    },
+    // sets some default plugins like uglify
+    mode: isProduction ? 'production' : 'development',
+    resolve: {
+      extensions: ['.js', '.json', '.ts', '.tsx'],
+      alias: {
+        // CUSTOM PACKAGES:
+        // enables custom paths on import. IMPORTANT!: need to be defined in typescript path also + baseUrl
+        'common': path.resolve(__dirname, 'src/common'),
+        'components': path.resolve(__dirname, 'src/components'),
+        'containers': path.resolve(__dirname, 'src/containers')
+      }
+    },
+    module: {
+      rules: webpackLoaders.getLoaders(isProduction)
+    },
+    plugins: webpackPlugins.getPlugins(isProduction),
+    optimization: isProduction ? {
+      minimizer: [new webpackPlugins.OptimizeCSSAssetsPlugin({})]
+    } : {},
+    devServer: {
+      contentBase: path.resolve(__dirname, 'src'),
+      hot: true
+    },
+    // node: {
+    //   // workaround for webpack-dev-server issue
+    //   // https://github.com/webpack/webpack-dev-server/issues/60#issuecomment-103411179
+    //   fs: 'empty',
+    //   net: 'empty'
+    // }
   }
 };
