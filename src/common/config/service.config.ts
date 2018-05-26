@@ -1,3 +1,3 @@
 export function appendServiceApiEndpoint(url: string): string {
-    return `localhost:9000/${url}`;
+    return `http://localhost:9000/${url}`;
 }
