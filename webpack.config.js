@@ -32,8 +32,12 @@ module.exports = env => {
       rules: webpackLoaders.getLoaders(isProduction)
     },
     plugins: webpackPlugins.getPlugins(isProduction),
-    optimization: {
-      minimizer: [ isProduction ? new webpackPlugins.OptimizeCSSAssetsPlugin({}) : null ]
+    optimization: isProduction ? {
+      minimizer: [new webpackPlugins.OptimizeCSSAssetsPlugin({})]
+    } : {},
+    devServer: {
+      contentBase: './src',
+      hot: true
     },
   }
 };

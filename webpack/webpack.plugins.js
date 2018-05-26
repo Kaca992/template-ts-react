@@ -38,6 +38,7 @@ exports.getPlugins = (isProduction) => {
         // so other modules can use it. some modules will have different behaviour if NODE_ENV is set to production
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': isProduction ? JSON.stringify('production') : JSON.stringify('development')
-        })
+        }),
+        new webpack.HotModuleReplacementPlugin()
     ];
 };

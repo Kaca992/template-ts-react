@@ -24,7 +24,7 @@ export default class Main extends React.Component<IMainProps, IMainState> {
         return (
             <div className="main-container">
                 <img src={helloWorld} />
-                Hello
+                <br/>>Hello
             </div>
         );
     }
