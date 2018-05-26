@@ -2,14 +2,18 @@
   "name": "template-ts-react",
   "version": "0.1.0",
   "private": true,
-  "description": "Template project that includes React, TS, Sass and Webpack v4",
+  "description": "Template project that includes React, TypeScript, React-Router, Sass and Webpack v4",
   "main": "index.js",
   "author": {
     "name": "Dino Kacevenda",
     "email": "kacavendadino@gmail.com"
   },
   "keywords": [
-    "react", "typescript", "webpack", "sass"
+    "react",
+    "typescript",
+    "webpack",
+    "sass",
+    "react-router"
   ],
   "repository": {
     "url": "https://github.com/Kaca992/template-ts-react"
@@ -47,12 +51,14 @@
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
+    "@types/react-router-dom": "^4.2.6",
     "classnames": "^2.2.5",
     "core-decorators": "^0.20.0",
     "global": "^4.3.2",
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.17.4",
     "react": "^16.3.2",
-    "react-dom": "^16.3.2"
+    "react-dom": "^16.3.2",
+    "react-router-dom": "^4.2.2"
   }
 }

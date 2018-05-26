@@ -14,7 +14,8 @@ module.exports = env => {
     devtool: isProduction ? 'source-map' : 'inline-source-map',
     output: {
       filename: '[name].bundle.js',
-      path: path.resolve(__dirname, 'dist')
+      path: path.resolve(__dirname, 'dist'),
+      publicPath: isProduction ? './' : '/'
     },
     // sets some default plugins like uglify
     mode: isProduction ? 'production' : 'development',
@@ -36,7 +37,7 @@ module.exports = env => {
       minimizer: [new webpackPlugins.OptimizeCSSAssetsPlugin({})]
     } : {},
     devServer: {
-      contentBase: './src',
+      contentBase: path.resolve(__dirname, 'src'),
       hot: true
     },
   }
