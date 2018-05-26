@@ -6,8 +6,8 @@ import { autobind } from 'core-decorators';
 import './main.scss';
 import * as helloWorld from '../../assets/images/hello-world.png';
 import { Route } from 'react-router-dom';
-import { RoutesEnum } from 'common/router.config';
 import RouterParamTest from 'components/routerParamTest/routerParamTest';
+import { RoutesEnum } from 'common/config/router.config';
 
 export interface IMainProps {
 

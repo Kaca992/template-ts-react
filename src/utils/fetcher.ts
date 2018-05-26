@@ -1,5 +1,5 @@
 import 'isomorphic-fetch';
-import { appendServiceApiEndpoint } from './configOptions';
+import { appendServiceApiEndpoint } from 'common/config/service.config';
 
 export interface ICustomFetchOptions {
     hasResult?: boolean;
