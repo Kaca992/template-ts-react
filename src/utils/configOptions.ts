@@ -1,3 +1,3 @@
 export function appendServiceApiEndpoint(url: string): string {
-    return `https://dinotestfunctions.azurewebsites.net/${url}`;
+    return `localhost:9000/${url}`;
 }
