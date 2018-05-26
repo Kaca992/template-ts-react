@@ -4,8 +4,9 @@ const webpack = require('webpack');
 const webpackLoaders = require('./webpack/webpack.loaders');
 const webpackPlugins = require('./webpack/webpack.plugins');
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 module.exports = env => {
-  console.log(env);
   return {
     entry: './src/index.tsx',
     devtool: 'inline-source-map',
@@ -26,11 +27,20 @@ module.exports = env => {
     module: {
       rules: [
         webpackLoaders.awesomeTypeScript,
-        webpackLoaders.sass
+        isProduction ? webpackLoaders.sassProd : webpackLoaders.sassDev
       ]
     },
     plugins: [
-
+      new webpackPlugins.MiniCssExtractPlugin({
+        // Options similar to the same options in webpackOptions.output
+        // both options are optional
+        filename: isProduction ? '[name].[hash].css' : '[name].css',
+        chunkFilename: isProduction ? '[id].[hash].css' : '[id].css'
+      }),
+      new webpackPlugins.HtmlWebpackPlugin({
+        // Load a custom template (lodash by default see the FAQ for details)
+        template: 'index.html'
+      })
     ]
   }
 };

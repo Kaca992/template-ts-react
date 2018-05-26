@@ -8,3 +8,10 @@
 // exports.CopyWebpackPlugin = require('copy-webpack-plugin');
 // exports.UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 // exports.CompressionPlugin = require("compression-webpack-plugin");
+
+// separates css into separate file that is not inlined with javascript
+exports.MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+// includes all bundles into an html file that is used for serving on server. useful if 
+// names contains hash
+exports.HtmlWebpackPlugin = require('html-webpack-plugin');

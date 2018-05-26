@@ -8,9 +8,15 @@ exports.awesomeTypeScript = {
 };
 
 // sass loader
-exports.sass = {
+exports.sassDev = {
     test: /\.scss$/, 
     use: ['style-loader', 'css-loader', 'sass-loader']
+};
+
+// produciton sass loader separates all css files into a separate file, not inlined with js
+exports.sassProd = {
+    test: /\.scss$/, 
+    use: [plugins.MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
 };
 
 
