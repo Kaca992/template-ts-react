@@ -13,8 +13,12 @@ exports.HtmlWebpackPlugin = HtmlWebpackPlugin;
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 exports.OptimizeCSSAssetsPlugin = OptimizeCSSAssetsPlugin;
 
+// compresses files to gzip
+const CompressionPlugin = require("compression-webpack-plugin");
+exports.CompressionPlugin = CompressionPlugin;
+
 exports.getPlugins = (isProduction) => {
-    return [
+    let plugins = [
         new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output
             // both options are optional
@@ -31,4 +35,12 @@ exports.getPlugins = (isProduction) => {
         }),
         new webpack.HotModuleReplacementPlugin()
     ];
+
+    if (isProduction) {
+        plugins.push(
+            new CompressionPlugin({deleteOriginalAssets: true})
+        );
+    }
+
+    return plugins;
 };

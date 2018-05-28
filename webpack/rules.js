@@ -1,4 +1,4 @@
-var plugins = require('./webpack.plugins');
+var plugins = require('./plugins');
 
 //typeScript
 const awesomeTypeScript = {
@@ -29,7 +29,7 @@ const fontLoader = {
 }
 
 // get loaders function
-exports.getLoaders = (isProduction) => {
+exports.getRules = (isProduction) => {
     let loaders = [awesomeTypeScript, fileLoader, fontLoader];
 
     if (isProduction) {
@@ -40,10 +40,3 @@ exports.getLoaders = (isProduction) => {
 
     return loaders;
 }
-
-//styles
-
-// exports.sassOneFile = {
-//     test: /\.scss$/, 
-//     loader: plugins.ExtractTextPlugin.extract('css-loader!sass-loader')
-// };

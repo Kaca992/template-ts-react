@@ -1,8 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const webpackLoaders = require('./webpack/webpack.loaders');
-const webpackPlugins = require('./webpack/webpack.plugins');
+const rules = require('./webpack/rules');
+const plugins = require('./webpack/plugins');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -30,11 +30,11 @@ module.exports = env => {
       }
     },
     module: {
-      rules: webpackLoaders.getLoaders(isProduction)
+      rules: rules.getRules(isProduction)
     },
-    plugins: webpackPlugins.getPlugins(isProduction),
+    plugins: plugins.getPlugins(isProduction),
     optimization: isProduction ? {
-      minimizer: [new webpackPlugins.OptimizeCSSAssetsPlugin({})]
+      minimizer: [new plugins.OptimizeCSSAssetsPlugin({})]
     } : {},
     devServer: {
       contentBase: path.resolve(__dirname, 'src'),
