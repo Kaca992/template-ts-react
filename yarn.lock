@@ -6557,6 +6557,12 @@ tslint-react@^3.2.0:
   dependencies:
     tsutils "^2.13.1"
 
+tslint-webpack-plugin@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/tslint-webpack-plugin/-/tslint-webpack-plugin-1.2.2.tgz#364369d2842d5fc8115815e9fe92f0d4dc39b9b7"
+  dependencies:
+    chalk "^2.1.0"
+
 tslint@^5.8.0:
   version "5.10.0"
   resolved "https://registry.yarnpkg.com/tslint/-/tslint-5.10.0.tgz#11e26bccb88afa02dd0d9956cae3d4540b5f54c3"

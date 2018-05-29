@@ -17,6 +17,9 @@ exports.OptimizeCSSAssetsPlugin = OptimizeCSSAssetsPlugin;
 const CompressionPlugin = require("compression-webpack-plugin");
 exports.CompressionPlugin = CompressionPlugin;
 
+// runs tslint alongside webpack. Targets all defined targets
+const TSLintPlugin = require('tslint-webpack-plugin');
+
 exports.getPlugins = (isProduction) => {
     let plugins = [
         new MiniCssExtractPlugin({
@@ -33,7 +36,8 @@ exports.getPlugins = (isProduction) => {
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': isProduction ? JSON.stringify('production') : JSON.stringify('development')
         }),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new TSLintPlugin({files: ['./src/**/*.ts', './src/**/*.tsx']})
     ];
 
     if (isProduction) {
