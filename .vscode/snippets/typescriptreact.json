@@ -1,38 +1,32 @@
 {
-    "TS React Comp":{
+    "TS React Comp": {
         "prefix": "_cmp",
         "body": [
-            "import * as React from 'react';\n",
-
             "import * as classNames from 'classnames';",
-            "import { autobind } from 'core-decorators';\n",
-
+            "import * as React from 'react';",
+            "",
             "import './${1:${TM_FILENAME_BASE/(.*)$/${1}/}}.scss';\n",
-
             "export interface I${2:${TM_FILENAME_BASE/(.{1})(.*)$/${1:/upcase}$2/}}Props {\n",
             "}\n",
-
             "export interface I${2}State {\n",
             "}\n",
-
             "export default class ${2} extends React.Component<I${2}Props, I${2}State> {",
-                "\tconstructor(props: I${2}Props) {",
-                    "\t\tsuper(props);\n",      
-                "\t}\n",
-
-                "\tpublic render() {",
-                    "\t\treturn (",
-                        "\t\t\t<div>",
-                        "\t\t\t\tHello",                  
-                        "\t\t\t</div>",
-                    "\t\t);",
-                "\t}",
+            "\tconstructor(props: I${2}Props) {",
+            "\t\tsuper(props);\n",
+            "\t}\n",
+            "\tpublic render() {",
+            "\t\treturn (",
+            "\t\t\t<div>",
+            "\t\t\t\tHello",
+            "\t\t\t</div>",
+            "\t\t);",
+            "\t}",
             "}",
             ""
         ],
-        "description": "React Component snippet"
+        "description": "React Component"
     },
-    "TS React Stateless Functional Component": {
+    "TS React Functional Component": {
         "prefix": "_cmp-func",
         "body": [
             "import * as React from 'react';",
@@ -48,15 +42,13 @@
             "};",
             ""
         ],
-        "description": "React Stateless Functional Component snippet"
+        "description": "React Stateless Functional Component"
     },
     "TS React Stateless Component": {
         "prefix": "_cmp-stateless",
         "body": [
-            "import * as React from 'react';",
-            "",
             "import * as classNames from 'classnames';",
-            "import { autobind } from 'core-decorators';",
+            "import * as React from 'react';",
             "",
             "import './${1:${TM_FILENAME_BASE/(.*)$/${1}/}}.scss';",
             "",
@@ -65,16 +57,63 @@
             "}",
             "",
             "export default class ${2} extends React.PureComponent<I${2}Props> {",
-                "\tpublic render() {",
-                    "\t\treturn (",
-                        "\t\t\t<div>",
-                        "\t\t\t\tHello",                  
-                        "\t\t\t</div>",
-                    "\t\t);",
-                "\t}",
+            "\tpublic render() {",
+            "\t\treturn (",
+            "\t\t\t<div>",
+            "\t\t\t\tHello",
+            "\t\t\t</div>",
+            "\t\t);",
+            "\t}",
             "}",
             ""
         ],
-        "description": "React Stateless Functional Component snippet"
+        "description": "React Pure Component"
+    },
+    "TS Redux Container": {
+        "prefix": "_cont",
+        "body": [
+            "import * as React from 'react';",
+            "import { connect } from 'react-redux';",
+            "import { IRootReducerState } from 'reducers/rootReducer';",
+            "import './${1:${TM_FILENAME_BASE/(.*)$/${1}/}}.scss';",
+            "",
+            "interface I${2:${TM_FILENAME_BASE/(.{1})(.*)$/${1:/upcase}$2/}}Props {",
+            "",
+            "}",
+            "",
+            "interface I${2}State {",
+            "",
+            "}",
+            "function mapStateToProps(state: IRootReducerState): Partial<I${2}Props> {",
+            "\treturn {",
+            "",
+            "\t};",
+            "}",
+            "",
+            "function mapDispatchToProps(dispatch: any): Partial<I${2}Props> {",
+            "\treturn {",
+            "",
+            "\t};",
+            "}",
+            "",
+            "class ${2} extends React.Component<I${2}Props, I${2}State> {",
+            "\tconstructor(props: I${2}Props) {",
+            "\t\tsuper(props);\n",
+            "\t}\n",
+            "\tpublic render() {",
+            "\t\treturn (",
+            "\t\t\t<div>",
+            "\t\t\t\tHello",
+            "\t\t\t</div>",
+            "\t\t);",
+            "\t}",
+            "}\n",
+            "export default connect(",
+            "\tmapStateToProps,",
+            "\tmapDispatchToProps",
+            ")(${2});",
+            ""
+        ],
+        "description": "TS React Redux Container"
     }
 }

@@ -1,0 +1,1 @@
+export const GET_INITIAL_DATA = '@App/GET_INITIAL_DATA';

@@ -8,6 +8,7 @@
         "rebornix.project-snippets",
         "msjsdiag.debugger-for-chrome",
         "CoenraadS.bracket-pair-colorizer",
-        "ms-vscode.powershell"
+        "ms-vscode.powershell",
+        "wayou.vscode-todo-highlight"
 	]
 }

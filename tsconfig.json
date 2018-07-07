@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "sourceMap": true,
-    "target": "es5",
+    "target": "es6",
     "jsx": "react",
     "module": "commonjs",
     "moduleResolution": "node",
@@ -9,8 +9,6 @@
     "experimentalDecorators": true,
     "declaration": false,
     "noImplicitAny": false,
-    "noImplicitReturns": true,
-    "removeComments": true,
     "outDir": "./dist/",
     "lib": [
       "es6",
@@ -20,10 +18,24 @@
     // enables custom paths on import. IMPORTANT!: need to be defined in webpack alias also
     "baseUrl": ".",
     "paths": {
-      "common/*": ["src/common/*"],
-      "components/*": ["src/components/*"],
-      "containers/*": ["src/containers/*"]
-    }
+      "common/*": [
+        "src/common/*"
+      ],
+      "components/*": [
+        "src/components/*"
+      ],
+      "containers/*": [
+        "src/containers/*"
+      ],
+      "actions/*": [
+        "src/actions/*"
+      ],
+      "reducers/*": [
+        "src/reducers/*"
+      ]
+    },
+    // https://github.com/Microsoft/TypeScript/issues/25260, problem with 2.9. TS and some typings
+    "keyofStringsOnly": true
   },
   "exclude": [
     "dist",
