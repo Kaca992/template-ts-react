@@ -42,7 +42,7 @@
         "prefix": "_rdx-action",
         "body": [
             "export function ${1:funcName}(${2}) {",
-            "\treturn (dispatch, state) => {",
+            "\treturn (dispatch, getState) => {",
             "\t\t${3}",
             "\t};",
             "}"
