@@ -9,6 +9,7 @@
     "experimentalDecorators": true,
     "declaration": false,
     "noImplicitAny": false,
+    "strictNullChecks": true,
     "outDir": "./dist/",
     "lib": [
       "es6",
