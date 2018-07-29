@@ -74,7 +74,7 @@
         "body": [
             "import * as React from 'react';",
             "import { connect } from 'react-redux';",
-            "import { IRootReducerState } from 'reducers/rootReducer';",
+            "import { IRootReducerState } from '@reducers/rootReducer';",
             "import './${1:${TM_FILENAME_BASE/(.*)$/${1}/}}.scss';",
             "",
             "interface I${2:${TM_FILENAME_BASE/(.{1})(.*)$/${1:/upcase}$2/}}Props {",

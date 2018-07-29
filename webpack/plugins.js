@@ -37,12 +37,12 @@ exports.getPlugins = (isProduction) => {
             'process.env.NODE_ENV': isProduction ? JSON.stringify('production') : JSON.stringify('development')
         }),
         new webpack.HotModuleReplacementPlugin(),
-        new TSLintPlugin({files: ['./src/**/*.ts', './src/**/*.tsx']})
+        new TSLintPlugin({ files: ['./src/**/*.ts', './src/**/*.tsx'] })
     ];
 
     if (isProduction) {
         plugins.push(
-            new CompressionPlugin({deleteOriginalAssets: true})
+            // new CompressionPlugin({deleteOriginalAssets: true})
         );
     }
 

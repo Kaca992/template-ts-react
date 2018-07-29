@@ -19,19 +19,19 @@
     // enables custom paths on import. IMPORTANT!: need to be defined in webpack alias also
     "baseUrl": ".",
     "paths": {
-      "common/*": [
+      "@common/*": [
         "src/common/*"
       ],
-      "components/*": [
+      "@components/*": [
         "src/components/*"
       ],
-      "containers/*": [
+      "@containers/*": [
         "src/containers/*"
       ],
-      "actions/*": [
+      "@actions/*": [
         "src/actions/*"
       ],
-      "reducers/*": [
+      "@reducers/*": [
         "src/reducers/*"
       ]
     },

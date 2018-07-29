@@ -1,4 +1,4 @@
-import { IAction } from "common/appDataStructures";
+import { IAction } from "@common/appDataStructures";
 
 export interface IAppReducerState {
 

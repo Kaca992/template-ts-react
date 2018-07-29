@@ -24,11 +24,11 @@ module.exports = env => {
       alias: {
         // CUSTOM PACKAGES:
         // enables custom paths on import. IMPORTANT!: need to be defined in typescript path also + baseUrl
-        'common': path.resolve(__dirname, 'src/common'),
-        'components': path.resolve(__dirname, 'src/components'),
-        'containers': path.resolve(__dirname, 'src/containers'),
-        'actions': path.resolve(__dirname, 'src/actions'),
-        'reducers': path.resolve(__dirname, 'src/reducers')
+        '@common': path.resolve(__dirname, 'src/common'),
+        '@components': path.resolve(__dirname, 'src/components'),
+        '@containers': path.resolve(__dirname, 'src/containers'),
+        '@actions': path.resolve(__dirname, 'src/actions'),
+        '@reducers': path.resolve(__dirname, 'src/reducers')
       }
     },
     module: {

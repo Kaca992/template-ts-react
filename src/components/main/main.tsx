@@ -1,5 +1,5 @@
-import { RoutesEnum } from 'common/config/router.config';
-import RouterParamTest from 'components/routerParamTest/routerParamTest';
+import { RoutesEnum } from '@common/config/router.config';
+import RouterParamTest from '@components/routerParamTest/routerParamTest';
 import { autobind } from 'core-decorators';
 import * as React from 'react';
 import { Route } from 'react-router-dom';

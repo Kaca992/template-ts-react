@@ -18,7 +18,7 @@
     "TS Redux Reducer": {
         "prefix": "_rdx-reducer",
         "body": [
-            "import { IAction } from \"common/appDataStructures\";",
+            "import { IAction } from \"@common/appDataStructures\";",
             "",
             "export interface I${1:${TM_FILENAME_BASE/(.{1})(.*)$/${1:/upcase}$2/}}State {",
             "",

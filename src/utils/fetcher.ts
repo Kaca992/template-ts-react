@@ -1,4 +1,4 @@
-import { appendServiceApiEndpoint } from 'common/config/service.config';
+import { appendServiceApiEndpoint } from '@common/config/service.config';
 import 'isomorphic-fetch';
 
 export interface ICustomFetchOptions {
