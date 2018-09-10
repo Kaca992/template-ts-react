@@ -20,6 +20,13 @@ exports.CompressionPlugin = CompressionPlugin;
 // runs tslint alongside webpack. Targets all defined targets
 const TSLintPlugin = require('tslint-webpack-plugin');
 
+// Visualize and analyze your Webpack bundle to see which modules are taking up space and which might be duplicates.
+const Visualizer = require('webpack-visualizer-plugin');
+
+// copy files and folders to build folder
+const FileManagerPlugin = require('filemanager-webpack-plugin');
+exports.FileManagerPlugin = FileManagerPlugin;
+
 exports.getPlugins = (isProduction) => {
     let plugins = [
         new MiniCssExtractPlugin({
@@ -41,9 +48,21 @@ exports.getPlugins = (isProduction) => {
     ];
 
     if (isProduction) {
-        plugins.push(
-            // new CompressionPlugin({deleteOriginalAssets: true})
-        );
+        plugins.push(new FileManagerPlugin({
+            onStart: [{
+                delete: [
+                    'dist'
+                ]
+            }],
+            onEnd: [{
+                copy: [
+                    // Doesn't matter in which way you choose to do this. It will still get done
+                    { source: "src/assets/*", destination: "dist/assets" }
+                ]
+            }]
+        }));
+        plugins.push(new Visualizer({ filename: './statistics.html' }));
+        // plugins.push(new CompressionPlugin({deleteOriginalAssets: true}));
     }
 
     return plugins;

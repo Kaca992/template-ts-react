@@ -10,13 +10,13 @@ const awesomeTypeScript = {
 // sass loader
 const sassDev = {
     test: /\.scss$/,
-    use: ['style-loader', 'css-loader', 'sass-loader']
+    use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
 };
 
 // produciton sass loader separates all css files into a separate file, not inlined with js
 const sassProd = {
     test: /\.scss$/,
-    use: [plugins.MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+    use: [plugins.MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
 };
 
 // assets loaders

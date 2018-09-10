@@ -13,7 +13,8 @@ module.exports = env => {
     },
     devtool: isProduction ? 'source-map' : 'inline-source-map',
     output: {
-      filename: '[name].bundle.js',
+      filename: '[name].[hash].bundle.js',
+      chunkFilename: '[name].[hash].bundle.js',
       path: path.resolve(__dirname, 'dist'),
       publicPath: isProduction ? './' : '/'
     },
@@ -36,6 +37,9 @@ module.exports = env => {
     },
     plugins: plugins.getPlugins(isProduction),
     optimization: isProduction ? {
+      splitChunks: {
+        chunks: 'all'
+      },
       minimizer: [new plugins.OptimizeCSSAssetsPlugin({})]
     } : {},
     devServer: {

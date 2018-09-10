@@ -11,11 +11,6 @@
     "noImplicitAny": false,
     "strictNullChecks": true,
     "outDir": "./dist/",
-    "lib": [
-      "es6",
-      "es7",
-      "dom"
-    ],
     // enables custom paths on import. IMPORTANT!: need to be defined in webpack alias also
     "baseUrl": ".",
     "paths": {
@@ -40,7 +35,11 @@
   },
   "exclude": [
     "dist",
-    "build",
     "node_modules"
-  ]
+  ],
+  "awesomeTypescriptLoaderOptions": {
+    "useBabel": true,
+    "useCache": false,
+    "emitRequireType": false
+  }
 }
