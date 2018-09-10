@@ -6,7 +6,7 @@ const rootReducer = combineReducers({
 });
 
 export interface IRootReducerState {
-    app: IAppReducerState
+    app: IAppReducerState;
 }
 
 export default rootReducer;

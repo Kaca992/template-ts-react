@@ -9,6 +9,8 @@ const isProduction = process.env.NODE_ENV === 'production';
 module.exports = env => {
   return {
     entry: {
+      // IE support, if not needed you can remove this and babel from awesome TS loader
+      babel_polyfill: 'babel-polyfill',
       main: './src/index.tsx'
     },
     devtool: isProduction ? 'source-map' : 'inline-source-map',

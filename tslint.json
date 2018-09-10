@@ -1,9 +1,12 @@
 {
-  "extends": ["tslint:latest", "tslint-react"],
+  "extends": [
+    "tslint:latest",
+    "tslint-react"
+  ],
   "rules": {
     "jsx-wrap-multiline": false,
     "quotemark": false,
-    "jsx-boolean-value":false,
+    "jsx-boolean-value": false,
     "arrow-parens": false,
     "jsx-no-lambda": false,
     "jsx-no-multiline-js": false,
@@ -15,6 +18,6 @@
     "no-implicit-dependencies": false,
     "object-literal-sort-keys": false,
     "max-line-length": false,
-    "semicolon": false
+    "ordered-imports": false
   }
 }
