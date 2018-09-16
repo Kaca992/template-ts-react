@@ -57,7 +57,7 @@ exports.getPlugins = (isProduction) => {
             onEnd: [{
                 copy: [
                     // Doesn't matter in which way you choose to do this. It will still get done
-                    { source: "src/assets/*", destination: "dist/assets" }
+                    { source: "src/assets/*", destination: "dist/assets/" }
                 ]
             }]
         }));

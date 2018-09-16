@@ -13,7 +13,10 @@
     "typescript",
     "webpack",
     "sass",
-    "react-router"
+    "react-router",
+    "redux",
+    "tslint",
+    "yarn"
   ],
   "repository": {
     "url": "https://github.com/Kaca992/template-ts-react"

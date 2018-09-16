@@ -54,17 +54,30 @@ export function fetcher(url: string, customOptions: ICustomFetchOptions, dispatc
 
                 return Promise.resolve();
             } else {
-                const error = new Error(response.statusText);
+                let payload = { status: response.status, body: null };
+                response.json()
+                    .then(errorResponse => {
+                        payload = { ...payload, body: errorResponse };
+                    }).catch();
 
                 if (action !== undefined) {
                     dispatch({
                         type: actionUtils.errorAction(action),
-                        payload: null
+                        payload
                     });
+                } else {
+                    throw payload;
                 }
-
-                throw error;
             }
+        }).catch(error => {
+            if (action !== undefined) {
+                dispatch({
+                    type: actionUtils.errorAction(action),
+                    payload: error
+                });
+            }
+
+            throw error;
         });
 }
 
