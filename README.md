@@ -17,7 +17,7 @@ Template is configured to support __IE 11__ and uses autoprefixer for cross-bros
 
 ---
 
-## Table of Contents (Optional)
+## Table of Contents
 
 - [Installation](#installation)
 - [Folder Structure](#folder-structure)
