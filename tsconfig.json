@@ -33,6 +33,7 @@
     // https://github.com/Microsoft/TypeScript/issues/25260, problem with 2.9. TS and some typings
     "keyofStringsOnly": true,
     "allowJs": true,
+    "noEmitHelpers": true,
   },
   "exclude": [
     "dist",

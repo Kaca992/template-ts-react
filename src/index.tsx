@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import 'ts-helpers';
 import Main from '@components/main/main';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';

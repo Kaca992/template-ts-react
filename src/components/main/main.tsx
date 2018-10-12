@@ -1,47 +1,64 @@
-import { RoutesEnum } from '@common/config/router.config';
-import RouterParamTest from '@components/routerParamTest/routerParamTest';
-import { autobind } from 'core-decorators';
 import * as React from 'react';
-import { Route } from 'react-router-dom';
-import * as helloWorld from '../../assets/images/hello-world.png';
 import './main.scss';
+import { getParticipants } from '@common/service';
+import { IParticipantInfo } from '@common/appDataStructures';
+import { Spinner, QuickGrid, GridColumn } from 'quick-react-ts';
 
 export interface IMainProps {
 
 }
 
 export interface IMainState {
-
+    isLoading: boolean;
+    participantsByCategory: { [categoryId: number]: IParticipantInfo[] };
 }
 
 export default class Main extends React.Component<IMainProps, IMainState> {
+    private gridColumns: GridColumn[] = [
+        { valueMember: "name", headerText: "Ime i prezime", width: 200 }
+    ];
+
     constructor(props: IMainProps) {
         super(props);
+        this.state = {
+            isLoading: true,
+            participantsByCategory: {}
+        };
+    }
 
+    public componentDidMount() {
+        getParticipants(2).then(participants => {
+            const participantsByCategory: { [categoryId: number]: IParticipantInfo[] } = {};
+            participantsByCategory[1] = [];
+            participantsByCategory[2] = [];
+
+            participants.map(participant => participantsByCategory[participant.categoryId].push(participant));
+
+            this.setState({
+                isLoading: false,
+                participantsByCategory
+            });
+        });
     }
 
     public render() {
-        return (
-            <div className="main-container">
-                <img src={helloWorld} />
-                <Route exact path={RoutesEnum.Root} component={this._renderRoot} />
-                <Route path={RoutesEnum.Test} component={this._renderTest} />
-                <Route path={RoutesEnum.TestRouterParams} component={({ match }) => <RouterParamTest id={match.params.id} />} />
-            </div>
-        );
-    }
+        const { isLoading, participantsByCategory } = this.state;
+        if (isLoading) {
+            return <Spinner />;
+        }
 
-    @autobind
-    private _renderRoot() {
-        return <div>
-            Hello Home
+        return <div className="main">
+            {this.renderCategoryTable(1)}
+            {this.renderCategoryTable(2)}
         </div>;
     }
 
-    @autobind
-    private _renderTest() {
-        return <div>
-            Hello Test
+    private renderCategoryTable = (categoryId: number) => {
+        return <div className="main__grid-container">
+            <QuickGrid
+                columns={this.gridColumns}
+                rows={this.state.participantsByCategory[categoryId]}
+            />
         </div>;
     }
 }
