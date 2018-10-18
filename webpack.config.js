@@ -48,6 +48,10 @@ module.exports = env => {
       contentBase: path.resolve(__dirname, 'src'),
       hot: true
     },
+    // will not be bundled, expected to be present in the environment of user, nice for libraries
+    // externals: {
+    //   react: 'react'
+    // },
     // node: {
     //   // workaround for webpack-dev-server issue
     //   // https://github.com/webpack/webpack-dev-server/issues/60#issuecomment-103411179
