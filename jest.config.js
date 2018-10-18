@@ -5,7 +5,7 @@ module.exports = {
     "transform": {
         "^.+\\.tsx?$": "ts-jest"
     },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(ts|js)x?$",
     "moduleFileExtensions": [
         "ts",
         "tsx",
@@ -28,13 +28,14 @@ module.exports = {
     },
 
     // setup coverage to collect from all typescript files that are not in node modules and test
-    "collectCoverage": true,
-    "collectCoverageFrom": [
-        "**/*.{ts,tsx}",
-        "!**/node_modules/**",
-        "!**/test/**",
-        "!**/lib/**"
-    ],
+    // if you want to debug jest in vs code this must be turned off
+    // "collectCoverage": true,
+    // "collectCoverageFrom": [
+    //     "**/*.{ts,tsx}",
+    //     "!**/node_modules/**",
+    //     "!**/test/**",
+    //     "!**/lib/**"
+    // ],
     // Setup Enzyme
     "snapshotSerializers": ["enzyme-to-json/serializer"],
     "setupTestFrameworkScriptFile": "<rootDir>/test/setupEnzyme.ts",

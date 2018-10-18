@@ -15,11 +15,7 @@
             ],
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
-            "port": 9229,
-            "sourceMaps": true,
-            "outFiles": [
-                "${workspaceRoot}/dist/**/*.js"
-            ]
+            "port": 9229
         }
     ]
 }
