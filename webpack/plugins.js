@@ -51,7 +51,8 @@ exports.getPlugins = (isProduction) => {
         plugins.push(new FileManagerPlugin({
             onStart: [{
                 delete: [
-                    'dist'
+                    'dist',
+                    'lib'
                 ]
             }],
             onEnd: [{

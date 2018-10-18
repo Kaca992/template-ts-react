@@ -5,6 +5,8 @@ export interface ICustomFetchOptions {
     action?: string;
     requestActionPayload?: any;
     hasResult?: boolean;
+    /** Use when you don't want to append the service api endpoint */
+    fullUrlProvided?: boolean;
     responseActionPayloadMapper?(responsePayload): any;
 }
 
@@ -18,7 +20,7 @@ export function fetcher(url: string, customOptions: ICustomFetchOptions, dispatc
         ...init
     };
 
-    const fullUrl = appendServiceApiEndpoint(url);
+    const fullUrl = customOptions.fullUrlProvided ? url : appendServiceApiEndpoint(url);
 
     const { action, requestActionPayload, responseActionPayloadMapper } = customOptions;
 

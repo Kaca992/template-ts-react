@@ -9,6 +9,7 @@
         "msjsdiag.debugger-for-chrome",
         "CoenraadS.bracket-pair-colorizer",
         "ms-vscode.powershell",
-        "wayou.vscode-todo-highlight"
-	]
+        "wayou.vscode-todo-highlight",
+        "orta.vscode-jest"
+    ]
 }

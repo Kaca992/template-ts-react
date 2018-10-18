@@ -1,17 +1,19 @@
 {
   "compilerOptions": {
-    "sourceMap": true,
     "target": "es6",
     "jsx": "react",
     "module": "commonjs",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "declaration": false,
+    // so we can debug inside vs code
+    "declaration": true,
+    "sourceMap": true,
     "noImplicitAny": false,
     "strictNullChecks": true,
-    "outDir": "./dist/",
-    // enables custom paths on import. IMPORTANT!: need to be defined in webpack alias also
+    "outDir": "./lib/",
+    // enables custom paths on import. 
+    // IMPORTANT!: need to be defined in webpack alias also and in jest.config so module resolution works
     "baseUrl": ".",
     "paths": {
       "@common/*": [
@@ -32,10 +34,10 @@
     },
     // https://github.com/Microsoft/TypeScript/issues/25260, problem with 2.9. TS and some typings
     "keyofStringsOnly": true,
-    "allowJs": true,
   },
   "exclude": [
     "dist",
+    "lib",
     "node_modules"
   ],
   "awesomeTypescriptLoaderOptions": {
