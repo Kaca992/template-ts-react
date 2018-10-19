@@ -23,7 +23,7 @@
     "url": "https://github.com/Kaca992/template-ts-react"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --config jest.config.build.js",
     "compile": "tsc",
     "dev": "webpack-dev-server --debug --output-pathinfo --history-api-fallback --hot --inline --progress --colors --port 3000 --open",
     "mobile-dev": "webpack-dev-server --debug --output-pathinfo --history-api-fallback --hot --inline --progress --colors --port 3000 --open --host {enter ip adress here}",
@@ -48,12 +48,13 @@
     "compression-webpack-plugin": "^1.1.11",
     "css-loader": "^0.28.11",
     "enzyme": "^3.7.0",
-    "enzyme-adapter-react-16": "^1.6.0",
+    "enzyme-adapter-react-16.3": "^1.3.0",
     "enzyme-to-json": "^3.3.4",
     "file-loader": "^1.1.11",
     "filemanager-webpack-plugin": "^2.0.5",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^23.6.0",
+    "jest-fetch-mock": "^1.6.6",
     "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.7.2",
     "optimize-css-assets-webpack-plugin": "^4.0.1",

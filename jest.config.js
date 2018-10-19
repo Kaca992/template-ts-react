@@ -1,6 +1,7 @@
 module.exports = {
     "roots": [
-        "<rootDir>/test"
+        "<rootDir>/test",
+        "<rootDir>/src"
     ],
     "transform": {
         "^.+\\.tsx?$": "ts-jest"
@@ -27,16 +28,7 @@ module.exports = {
         "\\.(css|scss)$": "<rootDir>/test/assetsTransformer.ts"
     },
 
-    // setup coverage to collect from all typescript files that are not in node modules and test
-    // if you want to debug jest in vs code this must be turned off
-    // "collectCoverage": true,
-    // "collectCoverageFrom": [
-    //     "**/*.{ts,tsx}",
-    //     "!**/node_modules/**",
-    //     "!**/test/**",
-    //     "!**/lib/**"
-    // ],
     // Setup Enzyme
     "snapshotSerializers": ["enzyme-to-json/serializer"],
-    "setupTestFrameworkScriptFile": "<rootDir>/test/setupEnzyme.ts",
+    "setupTestFrameworkScriptFile": "<rootDir>/test/setup.ts",
 }

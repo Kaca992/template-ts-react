@@ -2,7 +2,7 @@ import { RoutesEnum } from '@common/config/router.config';
 import * as React from 'react';
 import { Route } from 'react-router-dom';
 import './main.scss';
-import { fetcher } from '../../utils/fetcher';
+import fetcher from '../../utils/fetcher';
 
 export interface IMainProps {
 
@@ -21,7 +21,7 @@ export default class Main extends React.Component<IMainProps, IMainState> {
     }
 
     public componentDidMount() {
-        fetcher('https://dog.ceo/api/breeds/image/random', { fullUrlProvided: true, hasResult: true }, null, { headers: {} }).then(result => {
+        fetcher.fetch('https://dog.ceo/api/breeds/image/random', { fullUrlProvided: true, jsonResponseExpected: true, requestInit: { headers: {} } }).then(result => {
             this.setState({ dogUrl: result.message });
         });
     }
