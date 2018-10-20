@@ -1,5 +1,8 @@
 import * as mockFetch from 'jest-fetch-mock';
 import fetcher from "../../../src/utils/fetcher";
+import { setupMockFetch } from '../../setup';
+
+setupMockFetch();
 
 beforeEach(() => {
     mockFetch.mockResponse(JSON.stringify(1));

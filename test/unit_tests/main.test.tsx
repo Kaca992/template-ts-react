@@ -1,8 +1,11 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import Main from '@components/main/main';
-import fetcher from '../../src/utils/fetcher';
 import * as mockFetch from 'jest-fetch-mock';
+import { setupMockFetch } from '../setup';
+import fetcher from '../../src/utils/fetcher';
+
+setupMockFetch();
 
 beforeEach(() => {
   mockFetch.mockResponse(JSON.stringify(1));
