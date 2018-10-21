@@ -35,13 +35,26 @@ describe('Main Component Unit test', () => {
     expect(wrapper.find('.main').text()).toBe('Hello 1');
   });
 
-  test('Check if img element and state is set', () => {
+  test('Check if state is set', () => {
     mockFetch.mockResponseOnce(JSON.stringify({ status: '200 OK', message: 'test_dog_url' }));
     const wrapper = setupComponent().wrapper;
-    expect(wrapper.find('img')).toBeDefined();
 
     setImmediate(() => {
       expect(wrapper.instance().state).toEqual({ dogUrl: 'test_dog_url' });
+    });
+  });
+
+  test('Check img is rendered', () => {
+    mockFetch.mockResponseOnce(JSON.stringify({ status: '200 OK', message: 'test_dog_url' }));
+    const wrapper = mount(
+      <MemoryRouter initialEntries={['/']}>
+        <Main />
+      </MemoryRouter>
+    );
+
+    setImmediate(() => {
+      wrapper.update();
+      expect(wrapper.find('.main__dog-img').length).toBe(1);
     });
   });
 });
