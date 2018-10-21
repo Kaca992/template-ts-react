@@ -5,7 +5,7 @@ import { setupMockFetch } from '../../../setup';
 import fetcher from '../../../../src/utils/fetcher';
 import { mount } from 'enzyme';
 import { MemoryRouter } from 'react-router-dom';
-import Main, { IMainState } from '../../../../src/components/main/main';
+import Main from '../../../../src/components/main/main';
 
 setupMockFetch();
 
@@ -54,7 +54,7 @@ describe('Main Component Unit test', () => {
 
     setImmediate(() => {
       wrapper.update();
-      expect(wrapper.find('.main__dog-img').length).toBe(1);
+      expect(wrapper.find('.main__dog-img').exists()).toBe(true);
     });
   });
 });
