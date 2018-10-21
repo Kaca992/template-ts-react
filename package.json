@@ -23,8 +23,8 @@
     "url": "https://github.com/Kaca992/template-ts-react"
   },
   "scripts": {
-    "test:int": "jest --config .\\test\\config\\jest.config.integration.js",
-    "test:unit": "jest --config .\\test\\config\\jest.config.unit.js",
+    "test": "jest --verbose",
+    "test:coverage": "jest --config .\\test\\config\\jest.config.coverage.js",
     "compile": "tsc",
     "dev": "webpack-dev-server --debug --output-pathinfo --history-api-fallback --hot --inline --progress --colors --port 3000 --open",
     "mobile-dev": "webpack-dev-server --debug --output-pathinfo --history-api-fallback --hot --inline --progress --colors --port 3000 --open --host {enter ip adress here}",

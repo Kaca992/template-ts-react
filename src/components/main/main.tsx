@@ -29,29 +29,21 @@ export default class Main extends React.Component<IMainProps, IMainState> {
     public render() {
         return (
             <div className="main">
-                {this.state.dogUrl ? <img className="main__dog-img" src={this.state.dogUrl} /> : "Who let the dogs out?"}
                 <Route exact path={RoutesEnum.Root} component={this._renderRoot} />
-                <Route path={RoutesEnum.Test} component={this._renderTest} />
                 <Route path={RoutesEnum.TestRouterParams} component={({ match }) => this._renderParam(match.params.id)} />
             </div>
         );
     }
 
     private _renderRoot = () => {
-        return <div>
-            Hello Home
-        </div>;
-    }
-
-    private _renderTest = () => {
-        return <div>
-            Hello Test
-        </div>;
+        return <>
+            {this.state.dogUrl ? <img className="main__dog-img" src={this.state.dogUrl} /> : "Who let the dogs out?"}
+        </>;
     }
 
     private _renderParam = (id: number) => {
-        return <div>
+        return <>
             {`Hello ${id}`}
-        </div>;
+        </>;
     }
 }
