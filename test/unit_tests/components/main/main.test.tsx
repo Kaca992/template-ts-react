@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { setupComponent } from './setup';
 import * as mockFetch from 'jest-fetch-mock';
-import { setupMockFetch } from '../../../setup';
-import fetcher from '../../../../src/utils/fetcher';
+import { setupMockFetch } from '../../../mock/fetch.mock';
 import { mount } from 'enzyme';
 import { MemoryRouter } from 'react-router-dom';
 import Main from '../../../../src/components/main/main';

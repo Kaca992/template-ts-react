@@ -1,6 +1,6 @@
 import * as mockFetch from 'jest-fetch-mock';
 import fetcher from "../../../src/utils/fetcher";
-import { setupMockFetch } from '../../setup';
+import { setupMockFetch } from '../../mock/fetch.mock';
 
 setupMockFetch();
 
