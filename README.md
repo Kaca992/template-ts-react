@@ -32,7 +32,7 @@ Yarn.lock and npm-shrinkwrap.json are provided so you can use whichever you pref
 
 ### Npm
 ```
-npm init
+npm install
 ```
 
 ### Yarn
