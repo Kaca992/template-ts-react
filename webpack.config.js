@@ -21,16 +21,7 @@ module.exports = env => {
     // sets some default plugins like uglify
     mode: isProduction ? "production" : "development",
     resolve: {
-      extensions: [".js", ".json", ".ts", ".tsx"],
-      alias: {
-        // CUSTOM PACKAGES:
-        // enables custom paths on import. IMPORTANT!: need to be defined in typescript path also + baseUrl
-        "@common": path.resolve(__dirname, "src/common"),
-        "@components": path.resolve(__dirname, "src/components"),
-        "@containers": path.resolve(__dirname, "src/containers"),
-        "@actions": path.resolve(__dirname, "src/actions"),
-        "@reducers": path.resolve(__dirname, "src/reducers")
-      }
+      extensions: [".js", ".json", ".ts", ".tsx"]
     },
     module: {
       rules: rules.getRules(isProduction)
