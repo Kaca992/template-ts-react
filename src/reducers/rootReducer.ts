@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
-import appReducer, { IAppReducerState } from './appReducer';
+import appReducer, { AppReducerState } from './appReducer';
 
 const rootReducer = combineReducers({
     app: appReducer
 });
 
-export interface IRootReducerState {
-    app: IAppReducerState;
+export interface RootReducerState {
+    app: AppReducerState;
 }
 
 export default rootReducer;

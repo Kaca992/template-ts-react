@@ -9,6 +9,7 @@
         "quotemark": [true, "single", "jsx-double"],
         "semicolon": [true, "always", "ignore-bound-class-methods"],
         "jsx-no-multiline-js": false,
+        "prefer-template": false,
 
         "object-literal-shorthand": false,
         "object-literal-sort-keys": false,
@@ -38,6 +39,7 @@
         "no-inferrable-types": false,
         // run before release
         "no-suspicious-comment": false,
+        "no-empty-interface": false,
 
         // we dont want console in production
         "no-console": [true, "debug", "info", "log", "time", "timeEnd", "trace"],
