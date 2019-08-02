@@ -1,7 +1,7 @@
 import { applyMiddleware, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import logger from 'redux-logger';
-import thunk from "redux-thunk";
+import reduxLogger from 'redux-logger';
+import reduxThunk from 'redux-thunk';
 import rootReducer, { IRootReducerState } from '../reducers/rootReducer';
 
 const middleware = [thunk, logger];

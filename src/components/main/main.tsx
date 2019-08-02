@@ -1,8 +1,8 @@
-import * as React from "react";
-import { Route } from "react-router-dom";
-import "./main.scss";
-import fetcher from "../../utils/fetcher";
-import { RoutesEnum } from "../../common/config/router.config";
+import * as React from 'react';
+import { Route } from 'react-router-dom';
+import { RoutesEnum } from '../../common/config/router.config';
+import fetcher from '../../utils/fetcher';
+import './main.scss';
 
 export interface IMainProps {}
 
@@ -20,7 +20,7 @@ export default class Main extends React.Component<IMainProps, IMainState> {
 
   public componentDidMount() {
     fetcher
-      .fetch("https://dog.ceo/api/breeds/image/random", {
+      .fetch('https://dog.ceo/api/breeds/image/random', {
         fullUrlProvided: true,
         jsonResponseExpected: true,
         requestInit: { headers: {} }
@@ -33,7 +33,7 @@ export default class Main extends React.Component<IMainProps, IMainState> {
   public render() {
     return (
       <div className="main">
-        <Route exact path={RoutesEnum.Root} component={this._renderRoot} />
+        <Route exact={true} path={RoutesEnum.Root} component={this._renderRoot} />
         <Route
           path={RoutesEnum.TestRouterParams}
           component={({ match }) => this._renderParam(match.params.id)}
@@ -48,7 +48,7 @@ export default class Main extends React.Component<IMainProps, IMainState> {
         {this.state.dogUrl ? (
           <img className="main__dog-img" src={this.state.dogUrl} />
         ) : (
-          "Who let the dogs out?"
+          'Who let the dogs out?'
         )}
       </>
     );

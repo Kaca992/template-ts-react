@@ -1,5 +1,5 @@
-import "isomorphic-fetch";
-import { appendServiceApiEndpoint } from "../common/config/service.config";
+import 'isomorphic-fetch';
+import { appendServiceApiEndpoint } from '../common/config/service.config';
 
 export interface IBasicFetchOptions {
   jsonResponseExpected?: boolean;
@@ -16,11 +16,11 @@ export interface IReduxFetchOptions extends IBasicFetchOptions {
 
 export class Fetcher {
   private readonly init: RequestInit = {
-    mode: "cors",
-    method: "GET",
-    credentials: "omit",
+    mode: 'cors',
+    method: 'GET',
+    credentials: 'omit',
     headers: {
-      "Content-Type": "application/json"
+      'Content-Type': 'application/json'
     }
   };
 
@@ -84,7 +84,7 @@ export class Fetcher {
         }
 
         return Promise.resolve();
-      } else {
+      }  {
         let payload = { status: response.status, body: null };
         return response
           .json()
