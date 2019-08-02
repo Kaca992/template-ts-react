@@ -7,7 +7,6 @@ import "./style/index.scss";
 import Main from "./components/main/main";
 
 const store = configureStore({});
-
 ReactDOM.render(
   <Provider store={store}>
     <Router>

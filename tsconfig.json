@@ -6,8 +6,6 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    // so we can debug inside vs code
-    "declaration": true,
     "sourceMap": true,
     "noImplicitAny": false,
     "strictNullChecks": true,
@@ -15,23 +13,5 @@
     // https://github.com/Microsoft/TypeScript/issues/25260, problem with 2.9. TS and some typings
     "keyofStringsOnly": true
   },
-  "exclude": ["dist", "lib", "node_modules"],
-  "awesomeTypescriptLoaderOptions": {
-    "useCache": true,
-    "emitRequireType": false,
-    "useBabel": true,
-    "babelOptions": {
-      "babelrc": false,
-      "presets": [
-        [
-          "@babel/preset-env",
-          {
-            "targets": "last 2 versions, ie 11",
-            "modules": false
-          }
-        ]
-      ]
-    },
-    "babelCore": "@babel/core"
-  }
+  "exclude": ["dist", "lib", "node_modules"]
 }
