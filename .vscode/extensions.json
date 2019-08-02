@@ -1,16 +1,3 @@
 {
-    "recommendations": [
-        "eamodio.gitlens",
-        "formulahendry.auto-close-tag",
-        "eg2.tslint",
-        "robertohuertasm.vscode-icons",
-        "mrmlnc.vscode-scss",
-        "rebornix.project-snippets",
-        "msjsdiag.debugger-for-chrome",
-        "CoenraadS.bracket-pair-colorizer",
-        "ms-vscode.powershell",
-        "wayou.vscode-todo-highlight",
-        "orta.vscode-jest",
-        "andys8.jest-snippets"
-    ]
+    "recommendations": ["eg2.tslint", "robertohuertasm.vscode-icons", "rebornix.project-snippets"]
 }
