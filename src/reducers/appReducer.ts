@@ -1,16 +1,9 @@
-import { IAction } from "@common/appDataStructures";
+import { Action } from '../common/appDataStructures';
 
-export interface IAppReducerState {
+export interface AppReducerState {}
 
-}
+const initialState: AppReducerState = {};
 
-const initialState: IAppReducerState = {
-
-};
-
-export default function appReducer(state: IAppReducerState = initialState, action: IAction = { type: '', payload: null }): IAppReducerState {
-    switch (action.type) {
-        default:
-            return state;
-    }
+export default function appReducer(state: AppReducerState = initialState, action: Action = { type: '', payload: null }): AppReducerState {
+    return state;
 }
