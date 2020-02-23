@@ -1,5 +1,5 @@
-import React from 'react';
-import helloWorld from '../assets/images/hello-world.png';
+import react from 'react';
+import helloWorldPng from '../assets/images/hello-world.png';
 
 //#region Interfaces
 export interface MainProps {}
