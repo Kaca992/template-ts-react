@@ -40,13 +40,13 @@
             "",
             "//#endregion Interfaces",
             "",
-            "const ${TM_FILENAME_BASE}: React.FunctionComponent<${2}Props> = (props) => {",
+            "const ${2}: React.FunctionComponent<${2}Props> = (props) => {",
             "\treturn null;",
             "};",
-            "export default ${TM_FILENAME_BASE};",
+            "export default ${2};",
             ""
         ],
-        "description": "React Component snippet"
+        "description": "React Function Component snippet"
     },
     "TS React Func Redux Container": {
         "prefix": "_rfunc-cont",
@@ -85,16 +85,16 @@
             "}",
             "//#endregion Redux",
             "",
-            "const ${TM_FILENAME_BASE}: React.FunctionComponent<${2}Props> = (props) => {",
+            "const ${2}: React.FunctionComponent<${2}Props> = (props) => {",
             "\treturn null;",
             "};",
             "",
             "export default connect(",
             "\tmapStateToProps,",
             "\tmapDispatchToProps",
-            ")(${TM_FILENAME_BASE});"
+            ")(${2});"
         ],
-        "description": "React Component snippet"
+        "description": "React Redux Function Component snippet"
     },
     "TS Redux Container": {
         "prefix": "_rcont",

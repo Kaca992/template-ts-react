@@ -12,6 +12,7 @@ This template contains:
 -   React-router for routing
 -   Normalize.css included
 -   Some basic snippets for React and Redux to get easily started
+-   Testing using Jest and React-testing-library
 
 ## License
 
