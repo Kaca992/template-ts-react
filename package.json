@@ -24,7 +24,6 @@
         "url": "https://github.com/Kaca992/template-ts-react"
     },
     "scripts": {
-        "compile": "tsc",
         "dev": "webpack-dev-server --debug --inline --progress --colors --open",
         "build": "cross-env NODE_ENV=production webpack -p --progress --colors",
         "clean": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command Remove-Item .\\lib, .\\dist -Force -Recurse",
@@ -32,7 +31,8 @@
         "supportedb": "npx browserslist",
         "lint": "tslint --project . --fix",
         "test": "jest --verbose",
-        "test:coverage": "jest --config .\\test\\config\\jest.config.coverage.js"
+        "test:coverage": "jest --config .\\test\\config\\jest.config.coverage.js",
+        "type-check": "npx tsc --noEmit"
     },
     "license": "MIT",
     "devDependencies": {
