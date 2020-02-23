@@ -1,17 +1,17 @@
 {
-  "compilerOptions": {
-    "target": "es6",
-    "jsx": "react",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "sourceMap": true,
-    "noImplicitAny": false,
-    "strictNullChecks": true,
-    "outDir": "./lib/",
-    // https://github.com/Microsoft/TypeScript/issues/25260, problem with 2.9. TS and some typings
-    "keyofStringsOnly": true
-  },
-  "exclude": ["dist", "lib", "node_modules"]
+    "compilerOptions": {
+        "target": "es6",
+        "jsx": "react",
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "sourceMap": true,
+        "noImplicitAny": false,
+        "strictNullChecks": true,
+        "outDir": "./lib/",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true
+    },
+    "exclude": ["dist", "lib", "node_modules"]
 }

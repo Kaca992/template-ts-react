@@ -1,52 +1,10 @@
 {
     "TS Function": {
         "prefix": "_func",
-        "body": [
-            "export function ${1:init}(${2}) {",
-            "\t${3}",
-            "}${4}"
-        ]
+        "body": ["export function ${1:init}(${2}) {", "\t${3}", "}${4}"]
     },
     "TS Function With no Export": {
         "prefix": "_func-noexport",
-        "body": [
-            "function ${1:init}(${2}) {",
-            "\t${3}",
-            "}${4}"
-        ]
-    },
-    "TS Redux Reducer": {
-        "prefix": "_rdx-reducer",
-        "body": [
-            "import { IAction } from \"@common/appDataStructures\";",
-            "",
-            "export interface I${1:${TM_FILENAME_BASE/(.{1})(.*)$/${1:/upcase}$2/}}State {",
-            "",
-            "}",
-            "",
-            "const initialState: I${1}State = {",
-            "",
-            "};",
-            "",
-            "export default function ${TM_FILENAME_BASE}(state: I${1}State = initialState, action: IAction = { type: '', payload: null }): I${1}State {",
-            "\tswitch (action.type) {",
-            "\t\tdefault:",
-            "\t\t\treturn state;",
-            "\t}",
-            "}",
-            ""
-        ],
-        "description": "Redux reducer template"
-    },
-    "TS Redux Action Creator": {
-        "prefix": "_rdx-action",
-        "body": [
-            "export function ${1:funcName}(${2}) {",
-            "\treturn (dispatch, getState) => {",
-            "\t\t${3}",
-            "\t};",
-            "}"
-        ],
-        "description": "Redux action creator template"
+        "body": ["function ${1:init}(${2}) {", "\t${3}", "}${4}"]
     }
 }
