@@ -8,7 +8,7 @@ This template contains:
 -   Redux setup
 -   Webpack v4.41 configuration
 -   Sass for styling
--   ESLint for linting
+-   TSLint for linting
 -   React-router for routing
 -   Normalize.css included
 -   Some basic snippets for React and Redux to get easily started

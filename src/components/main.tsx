@@ -1,5 +1,5 @@
-import react from 'react';
-import helloWorldPng from '../assets/images/hello-world.png';
+import React from 'react';
+import helloWorld from '../assets/images/hello-world.png';
 
 //#region Interfaces
 export interface MainProps {}
@@ -16,6 +16,7 @@ export default class Main extends React.Component<MainProps, MainState> {
         return (
             <div>
                 <img width={500} height={500} src={helloWorld} />
+                Template App
             </div>
         );
     }
