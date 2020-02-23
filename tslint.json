@@ -23,8 +23,8 @@
         "only-arrow-functions": [true, "allow-declarations", "allow-named-functions"],
         "arrow-return-shorthand": true,
 
-        // default imports should have same name as module
-        "import-name": true,
+        // doesn't play nice with esmodule interop
+        "import-name": false,
 
         // checks devDep also
         "no-implicit-dependencies": [true, "dev"],

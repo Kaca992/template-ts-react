@@ -7,7 +7,7 @@ const rules = require('./webpack/rules');
 const plugins = require('./webpack/plugins');
 
 const isProduction = process.env.NODE_ENV === 'production';
-console.log('Build mode:', process.env.NODE_ENV, isProduction ? 'Production' : 'Development');
+console.log('Build mode:', isProduction ? 'Production' : 'Development');
 
 module.exports = env => {
     return {
