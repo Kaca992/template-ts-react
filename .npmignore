@@ -9,3 +9,4 @@ types/
 webpack/
 webpack.config.js
 dist/
+lib/

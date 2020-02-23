@@ -61,9 +61,9 @@
         "no-namespace": true,
 
         "no-invalid-template-strings": true,
-        "no-invalid-this": true,
+        "no-invalid-this": true
 
         // zbog devextreme
-        "no-submodule-imports": [true, "quick-react-ts", "@syskit", "redux-persist", "devextreme", "devextreme-react"]
+        // "no-submodule-imports": [true]
     }
 }
